@@ -9,3 +9,12 @@ services:
     ports:
       - "6443:443"
     restart: unless-stopped
+
+  wordpress:
+    build:
+      context: ./requirements/wordpress
+      dockerfile: Dockerfile
+    container_name: wordpress
+    restart: unless-stopped
+    expose:
+      - "9000"
